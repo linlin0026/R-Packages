@@ -20,11 +20,12 @@
 
 cgmreport <- function(inputdirectory,
                       outputdirectory = tempdir(),
+                      pattern_subject,
                       tz = "UTC",
                       yaxis = c(0,400)){
   
 # Get file list.  
-  files <- base::list.files(path = inputdirectory,full.names = TRUE)
+  files <- base::list.files(path = inputdirectory,full.names = TRUE,pattern = pattern_subject)
 
 # Create data frame to store all glucose values from all files (for aggregate 
 # AGP). 
